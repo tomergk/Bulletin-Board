@@ -1,0 +1,262 @@
+/* ================== GENERAL ================= */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background-color: #FAECD6;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ================== END OF GENERAL ================= */
+
+/* ================== HEADER ================= */
+.nav-right-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-right li {
+  display: inline-block;
+}
+
+.navbar {
+  border: 0;
+  font-size: 15px;
+  letter-spacing: 3px;
+  background-color: #2E282A;
+}
+
+a.navbar-brand {
+  color: #A7FFE4 !important;
+  font-weight: 600;
+}
+
+b{
+  color: #fff;
+}
+
+.navbar-right li{
+  padding: 10px 15px;
+}
+
+.navbar-right li:hover {
+  background-color: #6c0000;
+}
+
+.navbar-right li a:hover {
+  background-color: #6c0000;
+}
+
+li.findPostLi{
+  display: none;
+  margin-top: 25px;
+}
+
+.header-btn {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.imgs {
+  width: 45px;
+  height: 40px;
+}
+
+/* ================== END OF HEADER ================= */
+
+/* ================== WRAPPER DIV ================= */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+/* ================== END OF WRAPPER DIV ================= */
+
+/* ================== HOME ================= */
+.post_header {
+  font-family: 'Borel', cursive;
+  font-weight: bold;
+  color: #7F212B;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.home__container {
+  display: grid;
+  grid-template-columns: 5fr 5fr 5fr;
+  width: 80%;
+  margin: 6rem 10% 0 10%;
+  min-height: 41rem;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.home__post {
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 2.5px solid #7e4a76;
+  background-color: #F3DEC9;
+  text-align: left;
+  overflow-wrap: break-word;
+  margin: 2%;
+  padding: 5%; /* Add padding to control space between content and border */
+}
+
+.thumbtack {
+  transform: scaleX(-1);
+  float: right;
+  display: block;
+}
+
+.home__post h3 {
+  text-align: center;
+  color: #230338;
+  font-family: 'Solitreo', cursive;
+}
+
+.home__post h4 {
+  margin: 2rem 5%;
+  font-family: 'Solitreo', cursive;
+  display: inline;
+  vertical-align: top;
+}
+
+.read_more {
+  margin-left: 5%;
+  display: inline;
+  vertical-align: top;
+}
+
+.home__post p {
+  margin-top: 2rem;
+  color: #02383C;
+  font-family: 'Solitreo', cursive;
+  font-weight: bolder;
+}
+
+.home__post h5 {
+  margin-top: 2rem;
+  margin-right: 5%;
+  text-align: right;
+  color: #01000a;
+}
+/* ================== END OF HOME ================= */
+
+
+
+/* ================== POST ================= */
+.post__container {
+  width: 50%;
+  height: 50%;
+  margin: 10% 25%;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid #000000;
+  background-color: #f0e2d0;
+}
+
+.title_con {
+  color: #8B0000;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 40px;
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: bolder;
+}
+
+.content_con {
+  color:#100a0a; 
+  padding-left: 1rem;
+  margin-top: 40px;
+  flex-grow: 1; /* Allowing the content to grow and push the author name to the bottom */
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: bolder;
+}
+
+.author_con {
+  padding-left: 1rem;
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: bolder;
+}
+/* ================== END OF POST ================= */
+
+
+
+/* ================== COMPOSE ================= */
+.compose__container {
+  width: 60%;
+  margin: 8rem auto 21%;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.form_label {
+  margin-top: 4rem;
+}
+
+.compose__container h1 {
+  text-align: center; 
+  text-decoration: underline;
+  color: #7F212B;
+  font-family: 'Borel', cursive;
+  font-weight: bold;
+}
+
+.compose_form .btn {
+  margin-top: 2rem;
+}
+
+.form-control {
+  font-family: 'Solitreo', cursive;
+  font-weight: bold;
+}
+
+/* ================== END OF COMPOSE ================= */
+
+
+
+/* ================== FOOTER ================= */
+.footer {
+	width: 100%;
+  height: 60px;
+	background-color: #2C3333;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.footer small {
+	font-size: 2rem;
+  color: #A7FFE4;
+}
+/* ================== END OF FOOTER ================= */
+
+
+/* MEDIA QUERIES (MEDIUM DEVICES (Tablets)) */
+
+@media screen and (max-width: 1024px){
+
+}
+
+/* MEDIA QUERIES (SMALL DEVICES (Phones)) */
+
+@media screen and (max-width: 600px) {
+
+}

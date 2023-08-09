@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>TOM3R | Daily Blog</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="/js/funcs.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Solitreo&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar">
+      <div class="container-fluid">
+
+        <div>
+          <a class="navbar-brand">
+            <img src="/images/coffe.png"
+              alt="Logo"
+              width="35"
+              height="30"
+              class="coffee">
+            DAILY Blog
+          </a>
+        </div>
+
+        <div class="nav-right-container">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="findPostLi">
+              <label><b>Find Post:</b></label>
+              <input
+                id="postTitleInput"
+                type="text"
+                name="postTitle"
+                placeholder="🔎 Post's Title"
+                class="ds-input"
+                autocomplete="off"
+                spellcheck="false"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-label="search input"
+                aria-owns="algolia-autocomplete-listbox-0"
+                dir="auto">
+            </li>
+
+            <ul id="dropdownList" class="dropdown-menu" style="display: none;"></ul>
+
+            <li>
+              <a class="header-btn">
+                <img
+                  class="imgs"
+                  id="toggleFindPost"
+                  alt="search icon"
+                  src="/images/mag.png">
+              </a>
+            </li>
+
+            <li>
+              <a href="/compose" class="header-btn">
+                <img
+                  class="imgs"
+                  src="/images/+.png"
+                  alt="create post">
+              </a>
+            </li>
+
+            <li>
+              <a href="/" class="header-btn">
+                <img
+                  class="imgs"
+                  src="/images/home.png">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <div class="wrapper">
