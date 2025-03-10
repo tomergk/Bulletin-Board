@@ -1,4 +1,11 @@
 /* ================== GENERAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   height: 100%;
@@ -8,13 +15,6 @@ body {
   background-color: #FAECD6;
   height: 100%;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* ================== END OF GENERAL ================= */
 
 /* ================== HEADER ================= */
 .nav-right-container {
@@ -71,7 +71,6 @@ li.findPostLi{
   height: 40px;
 }
 
-/* ================== END OF HEADER ================= */
 
 /* ================== WRAPPER DIV ================= */
 .wrapper {
@@ -79,7 +78,6 @@ li.findPostLi{
   flex-direction: column;
   min-height: 100%;
 }
-/* ================== END OF WRAPPER DIV ================= */
 
 /* ================== HOME ================= */
 .post_header {
@@ -121,12 +119,10 @@ li.findPostLi{
 .home__post h3 {
   text-align: center;
   color: #230338;
-  font-family: 'Solitreo', cursive;
 }
 
 .home__post h4 {
   margin: 2rem 5%;
-  font-family: 'Solitreo', cursive;
   display: inline;
   vertical-align: top;
 }
@@ -140,7 +136,6 @@ li.findPostLi{
 .home__post p {
   margin-top: 2rem;
   color: #02383C;
-  font-family: 'Solitreo', cursive;
   font-weight: bolder;
 }
 
@@ -150,8 +145,6 @@ li.findPostLi{
   text-align: right;
   color: #01000a;
 }
-/* ================== END OF HOME ================= */
-
 
 
 /* ================== POST ================= */
@@ -176,7 +169,6 @@ li.findPostLi{
   text-align: center;
   text-decoration: underline;
   margin-top: 40px;
-  font-family: 'Reenie Beanie', cursive;
   font-weight: bolder;
 }
 
@@ -185,17 +177,13 @@ li.findPostLi{
   padding-left: 1rem;
   margin-top: 40px;
   flex-grow: 1; /* Allowing the content to grow and push the author name to the bottom */
-  font-family: 'Reenie Beanie', cursive;
   font-weight: bolder;
 }
 
 .author_con {
   padding-left: 1rem;
-  font-family: 'Reenie Beanie', cursive;
   font-weight: bolder;
 }
-/* ================== END OF POST ================= */
-
 
 
 /* ================== COMPOSE ================= */
@@ -214,7 +202,6 @@ li.findPostLi{
   text-align: center; 
   text-decoration: underline;
   color: #7F212B;
-  font-family: 'Borel', cursive;
   font-weight: bold;
 }
 
@@ -223,12 +210,8 @@ li.findPostLi{
 }
 
 .form-control {
-  font-family: 'Solitreo', cursive;
   font-weight: bold;
 }
-
-/* ================== END OF COMPOSE ================= */
-
 
 
 /* ================== FOOTER ================= */
@@ -246,7 +229,6 @@ li.findPostLi{
 	font-size: 2rem;
   color: #A7FFE4;
 }
-/* ================== END OF FOOTER ================= */
 
 
 /* MEDIA QUERIES (MEDIUM DEVICES (Tablets)) */
