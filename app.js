@@ -3,12 +3,20 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 require('dotenv').config();
+const livereload = require("livereload");
+const connectLivereload = require("connect-livereload");
+const path = require("path");
+
+// === LiveReload Setup ===
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(path.join(__dirname, "public")); // watches public assets (css, js)
+liveReloadServer.watch(path.join(__dirname, "views"));  // watches EJS templates
 
 const app = express();
 
 // GLOBALS
 let port = 3000;
-
+app.use(connectLivereload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -117,4 +125,10 @@ app.get("/posts/:postId", function (req, res) {
 
 app.listen(port, function () {
   console.log("Server started on port 3000");
+});
+
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 100);
 });

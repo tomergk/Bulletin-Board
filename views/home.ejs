@@ -2,11 +2,28 @@
 
 <h1 class="post_header">Posts</h1>
 
+<!-- Two Info Cubes -->
+<div class="info-cubes">
+
+  <!-- Cube 1 -->
+  <div class="info-cube">
+    <h3>Add your own anonymous post!</h3>
+    <p>... and share it with the entire world!</p>
+  </div>
+
+  <!-- Cube 2 -->
+  <div class="info-cube">
+    <h3>Each post will be deleted after 2 weeks :)</h3>
+  </div>
+
+</div>
+
 <div class="home__container">
 
   <% posts.forEach(function(post){ %>
   <div class="home__post">
-    <img style="height:50px; width: 40px" class="thumbtack" src="/images/thumbtack.png" alt="thumbtack-icon">
+    <img style="height:50px; width: 40px" class="thumbtack"
+      src="/images/thumbtack.png" alt="thumbtack-icon">
     <h3><%=post.title%></h3>
     <h4>
       <%=post.content.substring(0, 50) + " ..." %>

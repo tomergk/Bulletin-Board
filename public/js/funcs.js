@@ -18,7 +18,7 @@ async function sendPostRequest(data) {
             .then(responseData => {
                 console.log('Response from server: ', responseData);
 
-                
+
                 displayDropdown(responseData.posts);
             })
     }
