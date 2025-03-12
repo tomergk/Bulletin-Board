@@ -35,38 +35,32 @@ mongoose.connect(process.env.MONGODB_URI, {
     process.exit(1);
   });
 
-const postSchema = {
+// ============== UPDATED: Use a new Mongoose Schema ==============
+const postSchema = new mongoose.Schema({
   title: String,
   content: String,
   author: String,
   time: {
     type: Date,
-    default: Date.now, // Set the default value to the current time
-    get: (val) => val.toLocaleString("en-US", { timeZoneName: "short" }) // Format the time
+    default: Date.now,
+    // This field becomes a TTL index, auto-removing docs after 14 days
+    expires: '14d'
   }
-};
+});
 
 const Post = mongoose.model("Post", postSchema);
 
 // ============== SERVER REQUESTS ==============
-
 app.route('/')
-
   .get(function (req, res) {
-    Post.find(
-      {},
-      function (err, posts) {
+    Post.find({}, function (err, posts) {
+      if (!err) {
         res.render("home", {
           posts: posts
         });
       }
-    );
+    });
   })
-
-  /* Within the Header.ejs file, the user requests a post by typing its title. 
-  This title value is then sent here to check if it exists in the database. 
-  If a match is found, we return a response with the value 'true' 
-  allowing the user to select and view the post.*/
   .post(async (req, res) => {
     try {
       let titleName = req.body.titleName;
@@ -80,20 +74,16 @@ app.route('/')
       );
     }
     catch (error) {
-      // Handlling errors by sending them as a response
       console.error(error);
       res.status(500).json({ error: "Internal server error" });
     }
   });
 
-
 // ============== COMPOSE REQUESTS ==============
 app.route('/compose')
-
   .get(function (req, res) {
     res.render("compose");
   })
-
   .post(function (req, res) {
     let post = new Post({
       title: req.body.postTitle,
@@ -102,31 +92,36 @@ app.route('/compose')
     });
 
     post.save(function (err) {
-      if (!err)
+      if (!err) {
         res.redirect("/");
+      }
     });
   });
 
-// Allowing users to specify their desired post by adding /posts/postId to the URL
+// ============== POST PAGE ==============
 app.get("/posts/:postId", function (req, res) {
   const requestedPostId = req.params.postId;
 
   Post.findOne({ _id: requestedPostId }, function (err, post) {
-    if (!err) {
+    if (!err && post) {
       res.render("post", {
         title: post.title,
         content: post.content,
         author: post.author
       });
+    } else {
+      // handle if not found or error
+      res.redirect("/");
     }
   });
 });
 
-
+// ============== START SERVER ==============
 app.listen(port, function () {
-  console.log("Server started on port 3000");
+  console.log("Server started on port " + port);
 });
 
+// ============== LIVE RELOAD ==============
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
